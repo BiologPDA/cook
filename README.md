@@ -1,7 +1,7 @@
 Инструкция:
 1. Установить Git на компьютер
 2. Создать проект "webapp" в Pycharm
-3. Внутрь проекта (важно, чтобы путь был  C:\Users\{username}\PycharmProjects\webapp>) скопировать репозиторий следующей командой:
+3. Внутрь проекта (важно, чтобы путь был  C:\Users\{имя_пользователя}\PycharmProjects\webapp>) скопировать репозиторий следующей командой:
 git clone https://github.com/BiologPDA/cook
 
 

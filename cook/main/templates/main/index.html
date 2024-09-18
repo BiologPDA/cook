@@ -1,2 +1,185 @@
-{% extends 'main/layout.html' %}
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'main/css/style.css'%}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Playwrite+NZ:wght@100..400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Herr+Von+Muellerhoff&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="intro">
+
+        <header class="header">
+            <div class="container">
+
+
+                <a href="#" class="logo">Лого</a>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="#">Главная</a></li>
+                        <li><a href="#">Меню</a></li>
+                        <li><a href="#">Галерея</a></li>
+                        <li><a href="#">Резервация</a></li>
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Контакты</a></li>
+                        <li><a href="#" class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                                </svg>
+                            </a></li>
+
+                        <li><a href="#" class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                </svg>
+                            </a></li>
+                    </ul>
+                </nav>
+            </div>
+
+        </header>
+
+        <div class="main">
+            <div class="container">
+                <div class="main_text1">
+                    <p class="name">Название</p>
+                    <p class="adress">Адрес</p>
+                    <p class="number">Телефон</p>
+
+                    <div class="button"><a href="#" class="button1">Посмотреть меню</a></div>
+                </div>
+
+
+
+
+
+
+            </div>
+
+        </div>
+        <div class="main_photos">
+            <div class="photo_1">
+                <p>Текст</p>
+            </div>
+            <div class="photo_2">
+                <p>Текст</p>
+            </div>
+            <div class="photo_3">
+                <p>Текст</p>
+            </div>
+        </div>
+    </div>
+    <div class="menu_header">
+
+        <div class="container">
+            <p class="name">Меню</p>
+        </div>
+    </div>
+    <div class="menu">
+        <div class="container">
+
+            <div class="menu_main">
+                <div class="menu_text1">
+                    <p class="food">Завтрак</p>
+                    <p class="food_name">Фра Диаволо — 1195 ₽</p>
+                    <p class="food_desc">Наши жареные кальмары, обжаренные с острыми и сладкими перцами в нашем маринадном соусе</p>
+                    <p class="food_name">Кальмары Фра — 795 ₽</p>
+                    <p class="food_desc">Легко панированные и обжаренные</p>
+                    <p class="food_name">Жареные Цукини — 795 ₽</p>
+                    <p class="food_desc">Легко панированные и обжаренные</p>
+                    <p class="food_name">Рулетики из баклажанов — 995 ₽</p>
+                    <p class="food_desc">С начинкой из рикотты, запеченные с маринарой и моцареллой</p>
+                    <p class="food_name">Кламс Касино (мидии) — 1250 ₽</p>
+                    <p class="food_desc">Маленькие шейные мидии с беконом, перцем и итальянскими травами</p>
+                    <p class="food_name">Шашлычки из говядины — 1200 ₽</p>
+                    <p class="food_desc">Маринованные шашлыки из говядины пожаренные на гриле и поданные на брускетте с ананасом.</p>
+                    <p class="food_name">Тёплый соус из артишоков и шпината — 850 ₽</p>
+                    <p class="food_desc">Подан в миске из тортильи с хрустящими чипсами.</p>
+                </div>
+                <div class="menu_text2">
+                    <p class="food">Обед</p>
+                    <p class="food_name">Старомодные рисовые шарики — 695 ₽</p>
+                    <p class="food_desc">Домашние рисовые шарики с итальянской сырной начинкой, панированные и обжаренные. Сверху — моцарелла и маринара.</p>
+                    <p class="food_name">Мини-бургеры (слайдеры) — 795 ₽</p>
+                    <p class="food_desc">Наши миниатюрные домашние бургеры с чеддером и хрустящим луком на фокачче.</p>
+                    <p class="food_name">Кесадилья с черным куриным мясом — 795 ₽</p>
+                    <p class="food_desc">Смесь из курицы с черной корочкой, хрустящего бекона и чеддера, с добавлением сметаны. </p>
+                    <p class="food_name">Картофельные крокеты — 995 ₽</p>
+                    <p class="food_desc">Обжаренное пюре с моцареллой и подливой.</p>
+                    <p class="food_name">Фаршированные ригатони — 1250 ₽</p>
+                    <p class="food_desc">Фаршированные рикоттой и моцареллой, подаются с соусом «водка».</p>
+                    <p class="food_name">Куриные наггетсы — 1200 ₽</p>
+                    <p class="food_desc">Кусочки курицы в панировке, поданные с вафельной картошкой и медовой горчицей.</p>
+                    <p class="food_name">Жареные равиоли — 850 ₽</p>
+                    <p class="food_desc">Панированные жареные равиоли с соусом маринара.</p>
+                </div>
+                <div class="menu_text3">
+                    <p class="food">Ужин</p>
+                    <p class="food_name">Бефстроганов — 1195 ₽</p>
+                    <p class="food_desc">Подается в сливочно-горгонзоловом соусе с тостом из кростини.</p>
+                    <p class="food_name">Запеченные мидии — 795 ₽</p>
+                    <p class="food_desc">Нарезанные и поданные в чесночном винном соусе.</p>
+                    <p class="food_name">Креветки BBQ — 795 ₽</p>
+                    <p class="food_desc">Огромные креветки, завернутые в бекон и обжаренные в сладком барбекю соусе.</p>
+                    <p class="food_name">Ассорти фритто — 995 ₽</p>
+                    <p class="food_desc">Жареные равиоли, кальмары, моцарелла и обжаренные ригатони. Подаются с соусами маринара и водка.</p>
+                    <p class="food_name">Чесночный хлеб — 1250 ₽</p>
+                    <p class="food_desc">Целая буханка итальянского хлеба, запечённая с чесночным маслом.</p>
+                    <p class="food_name">Жареные кальмары — 1200 ₽</p>
+                    <p class="food_desc">Обжаренные в фирменном кляре шефа и поданные с соусом маринара.</p>
+                    <p class="food_name">Итальянское дегустационное блюдо — 850 ₽</p>
+                    <p class="food_desc">Три итальянских фаворита: запеченные мидии, жареные кальмары и фаршированные креветки.</p>
+                </div>
+                <div class="button"><a href="#" class="button2">Заказать столик</a></div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+    <div class="footer">
+        <div class="container">
+            <div class="footer_line"></div>
+            <div class="rights">
+                <p>Все права защищены © 2024, Название</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
 

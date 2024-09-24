@@ -1,0 +1,391 @@
+{
+    % load static %
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #000000;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #474747;
+}
+
+
+
+
+
+body {
+    margin: 0;
+    font-family: 'Jura', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+
+
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+a,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto;
+
+}
+
+.intro {
+
+    width: 100%;
+    height: 40vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url('../img/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.header {
+
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 0 10%;
+    box-shadow: 0 5px 10px #7d7d7c;
+}
+
+.nav {
+    float: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+header nav ul li {
+    position: relative;
+    float: left;
+
+}
+
+header nav ul li a {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    color: #000000;
+    margin: 25px 10px;
+    padding: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    display: block;
+    transition: all 0.3s;
+}
+
+
+header nav ul li a:hover {
+
+    color: #9c3705;
+
+}
+
+
+nav ul li ul {
+
+    left: 0;
+    background: #000000;
+    width: 180px;
+    color: #fff;
+    display: none;
+    border-radius: 3px;
+}
+
+nav ul li ul li {
+    width: 100%;
+    border-bottom: 1px solid #fff;
+    border-radius: 3px;
+}
+
+nav ul li ul li ul {
+    left: 180px;
+
+
+}
+
+nav ul li:hover > ul {
+    display: initial;
+
+}
+
+
+
+.logo {
+
+    font-size: 50px;
+    color: #000;
+    font-family: 'Italiana';
+    width: 100%;
+    max-width: 80px;
+}
+
+
+
+
+.button {
+    margin: 50px auto;
+}
+
+
+.button1 {
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    font-family: 'Montseratt', sans-serif;
+    border: 2px solid #fff;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    padding-right: 45px;
+    padding-left: 45px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    max-width: 160px;
+    font-weight: 700;
+    transition: 0.3s;
+
+}
+
+.button1:hover {
+    color: #000;
+    background: #fff;
+    transform: scale(1.05);
+}
+
+.button2 {
+
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    font-family: 'Montseratt', sans-serif;
+    border: 2px solid #000;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    padding-right: 45px;
+    padding-left: 45px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #000;
+    max-width: 160px;
+    font-weight: 700;
+    transition: 0.3s;
+
+}
+
+.button2:hover {
+    color: #fff;
+    background: #000;
+    transform: scale(1.05);
+}
+
+.footer_line {
+    border-radius: 2px;
+    width: 100%;
+    background: #fff;
+    height: 1px;
+    margin-top: 40px;
+
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+
+    background: #000000;
+
+}
+
+.rights {
+    font-size: 17px;
+    color: #fff;
+}
+
+.rights > p {
+    margin: 4px;
+    margin-left: 30px;
+
+}
+
+.name {
+    color: #fff;
+    font-family: "Great Vibes", cursive;
+    font-weight: 400;
+    font-size: 120px;
+}
+
+.gallery {
+
+    padding-top: 5vh;
+    background: #dedede;
+    height: 90vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    transition: all 0.4s;
+}
+
+.gallery_header {
+
+    margin-top: 8vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+
+.gallery_left {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 72vh;
+    width: 65%;
+}
+
+.gallery_right {
+
+    display: flex;
+    height: 72vh;
+    width: 35%;
+}
+
+.gallery_right_block {
+    border: 4px solid #fff;
+    height: 72vh;
+    width: 100%;
+    background: url('../img/3.jpg') center no-repeat;
+    background-size: cover;
+    transition: all 0.4s;
+}
+
+.gallery_top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 36vh;
+    width: 100%;
+}
+
+.gallery_bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 36vh;
+    width: 100%;
+}
+
+.gallery_top_1 {
+
+    height: 36vh;
+    width: 25%;
+    background: url('../img/11.jpg') center no-repeat;
+    background-size: cover;
+
+    transition: all 0.4s;
+    border: 4px solid #fff;
+}
+
+.gallery_top_1:hover,
+.gallery_top_2:hover,
+.gallery_top_3:hover,
+.gallery_top_4:hover,
+.gallery_bottom_1:hover,
+.gallery_bottom_2:hover,
+.gallery_bottom_3:hover,
+.gallery_right_block:hover {
+    transform: scale(1.1);
+}
+
+.gallery_top_2 {
+    width: 25%;
+    height: 36vh;
+    background: url('../img/12.jpg') center no-repeat;
+    background-size: cover;
+    border: 4px solid #fff;
+    transition: all 0.4s;
+}
+
+.gallery_top_3 {
+    width: 25%;
+    height: 36vh;
+    background: url('../img/13.jpg') center no-repeat;
+    background-size: cover;
+    border: 4px solid #fff;
+    transition: all 0.4s;
+}
+
+.gallery_top_4 {
+    width: 25%;
+    background: url('../img/14.jpg') center no-repeat;
+    background-size: cover;
+    height: 36vh;
+    border: 4px solid #fff;
+    transition: all 0.4s;
+}
+
+.gallery_bottom_1 {
+    height: 36vh;
+    width: 25%;
+    background: url('../img/15.jpg') center no-repeat;
+    background-size: cover;
+    border: 4px solid #fff;
+    transition: all 0.4s;
+}
+
+.gallery_bottom_2 {
+    width: 50%;
+    height: 36vh;
+    background: url('../img/16.jpg') center no-repeat;
+    background-size: cover;
+    border: 4px solid #fff;
+    transition: all 0.4s;
+}
+
+.gallery_bottom_3 {
+    width: 25%;
+    height: 36vh;
+    background: url('../img/17.jpg') center no-repeat;
+    background-size: cover;
+    border: 4px solid #fff;
+    transition: all 0.4s;
+}

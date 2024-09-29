@@ -15,3 +15,6 @@ def gallery(request):
 
 def contacts(request):
     return render(request, 'main/contacts.html')
+
+def reservation(request):
+    return render(request, 'main/reservation.html')

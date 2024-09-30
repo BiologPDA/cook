@@ -18,3 +18,9 @@ def contacts(request):
 
 def reservation(request):
     return render(request, 'main/reservation.html')
+
+def login(request):
+    return render(request, 'main/login.html')
+
+def register(request):
+    return render(request, 'main/register.html')

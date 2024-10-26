@@ -149,8 +149,9 @@ nav ul li:hover > ul {
 .logo {
 
     font-size: 50px;
+
     color: #000;
-    font-family: 'Italiana';
+    font-family: "Emilys Candy", serif;
     width: 100%;
     max-width: 80px;
 }

@@ -24,3 +24,15 @@ def login(request):
 
 def register(request):
     return render(request, 'main/register.html')
+
+def dishes(request):
+    return render(request, 'main/dishes.html')
+
+def main_dish(request):
+    return render(request, 'main/main_dish.html')
+
+def desserts(request):
+    return render(request, 'main/desserts.html')
+
+def bar(request):
+    return render(request, 'main/bar.html')

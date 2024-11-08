@@ -41,52 +41,44 @@
 
 <body>
     <div class="intro">
-
-        {%include 'main/header.html' %}
+        {% include 'main/header.html' %}
         <div class="login_header">
-
             <div class="container">
                 <p class="name">Вход в аккаунт</p>
             </div>
         </div>
-
     </div>
 
     <div class="login">
         <div class="container">
-
             <div class="login_form">
-                <div class="form_input">
-                    <p class="input_text">Логин</p>
-                    <input type="text" class="input">
-                </div>
-                <div class="form_input">
-                    <p class="input_text">Пароль</p>
-                    <input type="password" placeholder="" class="input">
-                </div>
-                <div class="form_input">
-                    <p class="input_text">Почта</p>
-                    <input type="email" placeholder="pidor@mail.ru" class="input">
-                </div>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form_input">
+                        <p class="input_text">Логин</p>
+                        {{ form.username }} <!-- Поле ввода для логина -->
+                    </div>
+                    <div class="form_input">
+                        <p class="input_text">Пароль</p>
+                        {{ form.password }} <!-- Поле ввода для пароля -->
+                    </div>
+                    <button type="submit" class="button button2">Войти</button>
+                </form>
 
-                <button type="submit" class="button button2">Войти</button>
                 <p>Нет аккаунта?</p>
                 <a href="{% url 'register' %}" class="register_link">Регистрация</a>
             </div>
-
         </div>
     </div>
 
     <div class="footer">
         <div class="container">
-
             <div class="footer_line"></div>
             <div class="rights">
                 <p>Все права защищены © 2024, Название</p>
             </div>
         </div>
     </div>
-
 </body>
 
 </html>

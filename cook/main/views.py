@@ -1,6 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .forms import UserRegistrationForm
+from django.contrib.auth import login
+from .models import Order
 
-# Create your views here.
+
 def index(request):
     return render(request, 'main/index.html')
 
@@ -19,11 +22,16 @@ def contacts(request):
 def reservation(request):
     return render(request, 'main/reservation.html')
 
-def login(request):
-    return render(request, 'main/login.html')
-
 def register(request):
-    return render(request, 'main/register.html')
+    if request.method == 'POST':
+        form = UserRegistrationForm(request.POST)
+        if form.is_valid():
+            user = form.save()  # Сохраняем пользователя
+            login(request, user)  # Логиним пользователя
+            return redirect('home')  # Перенаправляем на главную страницу
+    else:
+        form = UserRegistrationForm()
+    return render(request, 'main/register.html', {'form': form})
 
 def dishes(request):
     return render(request, 'main/dishes.html')
@@ -36,3 +44,15 @@ def desserts(request):
 
 def bar(request):
     return render(request, 'main/bar.html')
+
+def admin_view(request):
+    if not request.user.is_staff:
+        return redirect('home')
+    return render(request, 'admin_dashboard.html')
+
+def profile_view(request):
+    # Получаем все заказы для текущего пользователя
+    orders = Order.objects.filter(user=request.user)
+    
+    # Передаем заказы в шаблон
+    return render(request, 'main/profile.html', {'orders': orders})

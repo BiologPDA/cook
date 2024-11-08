@@ -41,55 +41,60 @@
 
 <body>
     <div class="intro">
-
-        {%include 'main/header.html' %}
+        {% include 'main/header.html' %}
         <div class="register_header">
-
             <div class="container">
                 <p class="name">Регистрация</p>
             </div>
         </div>
-
     </div>
 
     <div class="register">
         <div class="container">
-
             <div class="register_form">
-                <div class="form_input">
-                    <p class="input_text">Имя</p>
-                    <input type="text" class="input" placeholder="Підорас">
-                </div>
-                <div class="form_input">
-                    <p class="input_text">Логин</p>
-                    <input type="text" placeholder="andrey1234" class="input">
-                </div>
-                <div class="form_input">
-                    <p class="input_text">Пароль</p>
-                    <input type="password" class="input">
-                </div>
-                <div class="form_input">
-                    <p class="input_text">Почта</p>
-                    <input type="email" placeholder="pidor@mail.ru" class="input">
-                </div>
-                <button type="submit" class="button button2">Зарегистрироваться</button>
+                <form method="POST">
+                    {% csrf_token %}
+
+                    <div class="form_input">
+                        <p class="input_text">Имя</p>
+                        {{ form.first_name }}
+                    </div>
+                    <div class="form_input">
+                        <p class="input_text">Фамилия</p>
+                        {{ form.last_name }}
+                    </div>
+                    <div class="form_input">
+                        <p class="input_text">Номер телефона</p>
+                        {{ form.phone_number }}
+                    </div>
+                    <div class="form_input">
+                        <p class="input_text">Логин</p>
+                        {{ form.username }}
+                    </div>
+                    <div class="form_input">
+                        <p class="input_text">Пароль</p>
+                        {{ form.password1 }}
+                    </div>
+                    <div class="form_input">
+                        <p class="input_text">Подтверждение пароля</p>
+                        {{ form.password2 }}
+                    </div>
+
+                    <button type="submit" class="button button2">Зарегистрироваться</button>
+                </form>
                 <p>Уже есть аккаунт?</p>
                 <a href="{% url 'login' %}" class="login_link">Войти</a>
             </div>
-
         </div>
     </div>
 
     <div class="footer">
         <div class="container">
-
             <div class="footer_line"></div>
             <div class="rights">
                 <p>Все права защищены © 2024, Название</p>
             </div>
         </div>
     </div>
-
 </body>
-
 </html>

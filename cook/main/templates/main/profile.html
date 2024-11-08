@@ -1,0 +1,61 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <div class="profile-page">
+    <div class="profile-info">
+      <h1>Профиль пользователя</h1>
+
+      <div class="user-details">
+        <p><strong>Имя пользователя:</strong> {{ user.username }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>Дата регистрации:</strong> {{ user.date_joined|date:"d M Y" }}</p>
+      </div>
+
+      {% if user.is_superuser %}
+        <!-- Профиль для администратора -->
+        <div class="admin-section">
+          <h2>Админские функции</h2>
+          <p>Как администратор, вы можете управлять пользователями, просматривать отчеты и модифицировать данные.</p>
+          <a href="{% url 'admin:index' %}">Перейти в админку</a>
+        </div>
+      {% else %}
+        <!-- Профиль для обычного пользователя -->
+        <div class="user-section">
+          <h2>Мои заказы</h2>
+          {% if orders %}
+            <table>
+              <thead>
+                <tr>
+                  <th>Номер заказа</th>
+                  <th>Продукт</th>
+                  <th>Количество</th>
+                  <th>Цена</th>
+                  <th>Статус</th>
+                  <th>Дата</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for order in orders %}
+                  <tr>
+                    <td>{{ order.id }}</td>
+                    <td>{{ order.product }}</td>
+                    <td>{{ order.quantity }}</td>
+                    <td>{{ order.price }}</td>
+                    <td>{{ order.get_status_display }}</td>
+                    <td>{{ order.created_at|date:"d M Y" }}</td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          {% else %}
+            <p>У вас нет заказов.</p>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      <div class="logout">
+        <a href="{% url 'logout' %}">Выйти</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

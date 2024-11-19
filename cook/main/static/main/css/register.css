@@ -185,7 +185,7 @@ li {
 
 .container {
     width: 100%;
-    max-width: 1150px;
+    max-width: 1300px;
     margin: 0 auto;
 
 }
@@ -201,7 +201,6 @@ li {
 
 
 .header {
-
 
     display: flex;
     justify-content: space-between;
@@ -223,7 +222,8 @@ li {
 header nav ul li {
     position: relative;
     float: left;
-
+    margin-left: 50px;
+    transition: .4s all;
 }
 
 header nav ul li a {
@@ -238,6 +238,9 @@ header nav ul li a {
     transition: all 0.3s;
 }
 
+header nav ul li:hover {
+    background: #f5e1ac;
+}
 
 header nav ul li a:hover {
 
@@ -273,7 +276,23 @@ nav ul li:hover > ul {
 
 }
 
+@media screen and (max-width: 1500px) {
+    header nav ul li {
+        margin-left: 30px;
+    }
+}
 
+@media screen and (max-width: 1340px) {
+    header nav ul li {
+        margin-left: 15px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    header nav ul li {
+        margin-left: 8px;
+    }
+}
 
 .logo {
 
@@ -383,7 +402,7 @@ nav ul li:hover > ul {
 
 .register {
     margin-top: 7vh;
-    height: 85vh;
+    height: 95vh;
     background: #fff;
 
 }
@@ -404,7 +423,12 @@ nav ul li:hover > ul {
     align-items: center;
 }
 
-.input {
+#id_first_name,
+#id_last_name,
+#id_phone_number,
+#id_username,
+#id_password1,
+#id_password2 {
     outline: none;
     border: none;
     border-bottom: 2px solid #526044;
@@ -414,7 +438,12 @@ nav ul li:hover > ul {
     transition: all 0.4s;
 }
 
-.input:focus {
+#id_first_name:focus,
+#id_last_name:focus,
+#id_phone_number:focus,
+#id_username:focus,
+#id_password1:focus,
+#id_password2:focus {
     transform: scale(1.03);
     outline: none;
     border-bottom: 2px solid #7bb540;

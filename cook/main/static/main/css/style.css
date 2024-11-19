@@ -61,7 +61,7 @@ a {
 
 .container {
     width: 100%;
-    max-width: 1150px;
+    max-width: 1300px;
     margin: 0 auto;
 
 }
@@ -229,7 +229,8 @@ a {
 header nav ul li {
     position: relative;
     float: left;
-
+    margin-left: 50px;
+    transition: .4s all;
 }
 
 header nav ul li a {
@@ -244,6 +245,9 @@ header nav ul li a {
     transition: all 0.3s;
 }
 
+header nav ul li:hover {
+    background: #f5e1ac;
+}
 
 header nav ul li a:hover {
 
@@ -279,7 +283,23 @@ nav ul li:hover > ul {
 
 }
 
+@media screen and (max-width: 1500px) {
+    header nav ul li {
+        margin-left: 30px;
+    }
+}
 
+@media screen and (max-width: 1340px) {
+    header nav ul li {
+        margin-left: 15px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    header nav ul li {
+        margin-left: 8px;
+    }
+}
 
 .logo {
 
@@ -555,6 +575,11 @@ nav ul li:hover > ul {
     height: 85vh;
 }
 
+.about_main_photo1:hover,
+.about_main_photo2:hover {
+    transform: scale(1.05);
+}
+
 .about_photo {
     height: 60vh;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
@@ -581,6 +606,7 @@ nav ul li:hover > ul {
     height: 30vh;
     width: 25%;
     background: url('../img/5.jpg') center no-repeat;
+    transition: all 0.4s;
 }
 
 .about_main_photo2 {
@@ -589,6 +615,7 @@ nav ul li:hover > ul {
     height: 30vh;
     width: 25%;
     background: url('../img/6.jpg') center no-repeat;
+    transition: all 0.4s;
 }
 
 .about_main_text {
@@ -602,11 +629,16 @@ nav ul li:hover > ul {
 }
 
 .name_about {
+    display: flex;
     top: 20%;
     left: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
     color: #fff;
+    width: 85%;
+    font-size: 100px;
+    align-content: center;
+    justify-content: space-around;
 }
 
 .container1 {
@@ -644,7 +676,7 @@ nav ul li:hover > ul {
 
 .benefits1_photo {
     height: 35vh;
-    width: 40%;
+    width: 45%;
     background: url('../img/7.jpg');
     background-size: cover;
     box-shadow: 10px 8px 8px gray;
@@ -659,7 +691,7 @@ nav ul li:hover > ul {
 
 .benefits2_photo {
     height: 35vh;
-    width: 40%;
+    width: 45%;
     background: url('../img/8.jpg');
     background-size: cover;
     box-shadow: -10px 8px 8px gray;
@@ -668,7 +700,7 @@ nav ul li:hover > ul {
 
 .benefits3_photo {
     height: 35vh;
-    width: 40%;
+    width: 45%;
     background: url('../img/9.jpg');
     background-size: cover;
     box-shadow: 10px 8px 8px gray;
@@ -741,7 +773,7 @@ nav ul li:hover > ul {
     }
 
     .benefits {
-        height: 180vh;
+        height: 160vh;
     }
 }
 
@@ -753,11 +785,19 @@ nav ul li:hover > ul {
     .about_main {
         top: 55%;
     }
+
+    .name_about {
+        font-size: 88px;
+    }
 }
 
 @media screen and (min-width:1150px) and (max-width:1351px) {
     .about_main_text {
         font-size: 17px;
+    }
+
+    .name_about {
+        font-size: 75px;
     }
 }
 
@@ -776,6 +816,10 @@ nav ul li:hover > ul {
         width: 100%;
         margin-right: 2%;
     }
+
+    .name_about {
+        font-size: 60px;
+    }
 }
 
 @media screen and (max-width:899px) {
@@ -785,6 +829,10 @@ nav ul li:hover > ul {
 
     .about_main_photo2 {
         display: none;
+    }
+
+    .benefits_text_name {
+        font-size: 28px;
     }
 
     .about_main_text {
@@ -802,6 +850,10 @@ nav ul li:hover > ul {
         top: 55%;
         width: 80%;
         flex-wrap: wrap;
+    }
+
+    .name_about {
+        font-size: 45px;
     }
 }
 
@@ -825,10 +877,22 @@ nav ul li:hover > ul {
     }
 
     .name {
-        font-size: 100px;
+        font-size: 65px;
     }
 
     .benefits_text_name {
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width:1150px) {
+    .benefits_text_name {
         font-size: 35px;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .benefits_text_name {
+        font-size: 30px;
     }
 }

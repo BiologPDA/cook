@@ -185,7 +185,7 @@ li {
 
 .container {
     width: 100%;
-    max-width: 1150px;
+    max-width: 1300px;
     margin: 0 auto;
 
 }
@@ -201,7 +201,6 @@ li {
 
 
 .header {
-
 
     display: flex;
     justify-content: space-between;
@@ -223,7 +222,8 @@ li {
 header nav ul li {
     position: relative;
     float: left;
-
+    margin-left: 50px;
+    transition: .4s all;
 }
 
 header nav ul li a {
@@ -238,6 +238,9 @@ header nav ul li a {
     transition: all 0.3s;
 }
 
+header nav ul li:hover {
+    background: #f5e1ac;
+}
 
 header nav ul li a:hover {
 
@@ -273,7 +276,24 @@ nav ul li:hover > ul {
 
 }
 
+@media screen and (max-width: 1500px) {
+    header nav ul li {
+        margin-left: 30px;
+    }
+}
 
+@media screen and (max-width: 1340px) {
+    header nav ul li {
+        margin-left: 15px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    header nav ul li {
+        margin-left: 8px;
+    }
+
+}
 
 .logo {
 
@@ -487,5 +507,103 @@ nav ul li:hover > ul {
 
     .name {
         font-size: 100px;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .dish_main {
+        flex-direction: column-reverse;
+
+    }
+
+    .button {
+        margin-top: 0;
+    }
+
+    .dish_text {
+
+        width: 90%;
+        height: 50%;
+        margin-left: 4%;
+        margin-right: 4%;
+        text-align: center;
+    }
+
+    .dish_photo {
+        width: 90%;
+        height: 50%;
+        margin-bottom: 7vh;
+        margin-left: 4%;
+        margin-right: 4%;
+        box-shadow: 0px 0px 7px 7px gray;
+    }
+
+    .menu {
+        height: 80vh;
+    }
+
+    .dish_main {
+        height: 70vh;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+
+    .dish_photo {
+        height: 40%;
+    }
+
+    .dish_text {
+        height: 60%;
+    }
+
+
+}
+
+@media screen and (max-width: 700px) {
+    .menu {
+        height: 80vh;
+    }
+
+    .dish_photo {
+        height: 30%;
+    }
+
+    .dish_text {
+        height: 70%;
+    }
+
+    .dish_main {
+        height: 70vh;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .menu {
+        height: 85vh;
+    }
+
+    .dish_main {
+        height: 75vh;
+    }
+
+    .dish_photo {
+        height: 25%;
+    }
+
+    .dish_text {
+        height: 75%;
+    }
+
+}
+
+@media screen and (max-width: 502px) {
+    .menu {
+        height: 90vh;
+    }
+
+    .dish_main {
+        height: 80vh;
     }
 }

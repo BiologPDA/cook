@@ -5,7 +5,7 @@ class CustomUser(AbstractUser):
     phone_number = models.CharField(max_length=15, unique=True)  # Поле для номера телефона
 
     # Отключаем использование поля email
-    email = None  # Не используем поле email
+    #email = None  # Не используем поле email
 
     def __str__(self):
         return self.username

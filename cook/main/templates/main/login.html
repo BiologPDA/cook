@@ -53,7 +53,7 @@
     <div class="login">
         <div class="container">
             <div class="login_form">
-                <form method="post">
+                <form method="post" class="login_form">
                     {% csrf_token %}
                     <div class="form_input">
                         <p class="input_text">Логин</p>
@@ -63,8 +63,8 @@
                         <p class="input_text">Пароль</p>
                         {{ form.password }} <!-- Поле ввода для пароля -->
                     </div>
-
-                </form><button type="submit" class="button button2">Войти</button>
+                    <button type="submit" class="button button2">Войти</button>
+                </form>
 
                 <p>Нет аккаунта?</p>
                 <a href="{% url 'register' %}" class="register_link">Регистрация</a>

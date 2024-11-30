@@ -41,47 +41,51 @@
 </head>
 
 <body>
+    {% if success_message %}
+    <div class="notification">
+        {{ success_message }}
+    </div>
+    {% endif %}
+
     <div class="intro">
-
-        {%include 'main/header.html' %}
+        {% include 'main/header.html' %}
         <div class="reservation_header">
-
             <div class="container">
                 <p class="name">Резервация</p>
             </div>
         </div>
-
     </div>
 
     <div class="reservation">
         <div class="container">
-
             <div class="reservation_form">
-                <div class="form_input">
-                    <p class="input_text">Дата</p>
-                    <input type="date" class="input">
-                </div>
-                <div class="form_input">
-                    <p class="input_text">Время</p>
-                    <input type="time" placeholder="17:00" class="input">
-                </div>
-                <div class="form_input">
-                    <p class="input_text">Количество человек</p>
-                    <input type="number" placeholder="2" class="input">
-                </div>
-                <div class="form_input">
-                    <p class="input_text">Время резервации</p>
-                    <input type="number" placeholder="2 часа" class="input">
-                </div>
-                <button type="submit" class="button button2">Забронировать</button>
+                <form method="POST" action="{% url 'reservation' %}">
+                    {% csrf_token %}
+                    <div class="form_input">
+                        <p class="input_text">Имя клиента</p>
+                        <input type="text" name="customer_name" class="input" required>
+                    </div>
+                    <div class="form_input">
+                        <p class="input_text">Дата и время</p>
+                        <input type="datetime-local" name="date" class="input" required>
+                    </div>
+                    <div class="form_input">
+                        <p class="input_text">Количество человек</p>
+                        <input type="number" name="number_of_people" placeholder="2" class="input" required min="1">
+                    </div>
+                    <div class="form_input">
+                        <p class="input_text">Продолжительность бронирования (в часах)</p>
+                        <input type="number" name="duration" placeholder="1" class="input" required min="1">
+                    </div>
+                    <input type="hidden" name="user" value="{{ request.user.id }}">
+                    <button type="submit" class="button button2">Забронировать</button>
+                </form>
             </div>
-
         </div>
     </div>
 
     <div class="footer">
         <div class="container">
-
             <div class="footer_line"></div>
             <div class="rights">
                 <p>Все права защищены © 2024, Primum</p>
@@ -89,6 +93,42 @@
         </div>
     </div>
 
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const notification = document.querySelector('.notification');
+            if (notification) {
+                setTimeout(() => {
+                    notification.style.display = 'none';
+                }, 5000); // Уведомление исчезает через 5 секунд
+            }
+        });
+    </script>
+
+    <style>
+        /* Плавное исчезновение уведомлений */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 9999;
+            max-width: 350px;
+            width: 100%;
+            margin: 0;
+            opacity: 1; /* Начальная видимость */
+            transition: opacity 0.5s ease-out; /* Плавное исчезновение */
+        }
+
+        .notification.hidden {
+            opacity: 0; /* После добавления класса .hidden, уведомление станет невидимым */
+        }
+    </style>
 </body>
 
 </html>

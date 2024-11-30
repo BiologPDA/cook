@@ -70,7 +70,7 @@
             <div class="user_section">
                 <h2>Мои заказы</h2>
                 {% if orders %}
-                <table>
+                <table class="table table-bordered">
                     <thead>
                         <tr>
                             <th>Номер заказа</th>
@@ -98,6 +98,36 @@
                 <p>У вас нет заказов.</p>
                 {% endif %}
             </div>
+
+            <div class="user_section">
+                <h2>Мои резервации</h2>
+                {% if reservations %}
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Номер резервации</th>
+                            <th>Имя клиента</th>
+                            <th>Дата и время</th>
+                            <th>Количество человек</th>
+                            <th>Продолжительность (часы)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for reservation in reservations %}
+                        <tr>
+                            <td>{{ reservation.id }}</td>
+                            <td>{{ reservation.customer_name }}</td>
+                            <td>{{ reservation.date|date:"d M Y, H:i" }}</td>
+                            <td>{{ reservation.number_of_people }}</td>
+                            <td>{{ reservation.duration }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% else %}
+                <p>У вас нет резерваций.</p>
+                {% endif %}
+            </div>
             {% endif %}
 
             <div class="button"><a href="{% url 'logout' %}" class="button2">Выйти</a></div>
@@ -114,5 +144,6 @@
         </div>
     </div>
 </body>
+
 
 </html>

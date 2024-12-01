@@ -1,11 +1,10 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser  # Импортируем AbstractUser для кастомной модели пользователя
+from django.contrib.auth.models import AbstractUser 
+from django.contrib.auth.models import User
+from django.conf import settings 
 
 class CustomUser(AbstractUser):
-    phone_number = models.CharField(max_length=15, unique=True)  # Поле для номера телефона
-
-    # Отключаем использование поля email
-    #email = None  # Не используем поле email
+    phone_number = models.CharField(max_length=15, unique=True)
 
     def __str__(self):
         return self.username
@@ -14,7 +13,7 @@ class Dish(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    category_choices = [
+    category_choices = [ 
         ('starter', 'Закуски'),
         ('main', 'Основные блюда'),
         ('dessert', 'Десерты'),
@@ -27,29 +26,29 @@ class Dish(models.Model):
         return self.name
 
 class Order(models.Model):
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, default=1)  # Присваиваем дефолтного пользователя с ID 1
-    product = models.CharField(max_length=255, default='')  # Название продукта или описание заказа, дефолтное значение
-    quantity = models.IntegerField(default=1)  # Количество с дефолтным значением
-    price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)  # Цена с дефолтным значением
-    status = models.CharField(max_length=50, choices=[('pending', 'Ожидает'), ('completed', 'Завершен')], default='pending')  # Статус заказа с дефолтным значением
-    created_at = models.DateTimeField(auto_now_add=True)  # Дата создания
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, default=1)  
+    product = models.CharField(max_length=255, default='')  
+    quantity = models.IntegerField(default=1)  
+    price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)  
+    status = models.CharField(max_length=50, choices=[('pending', 'Ожидает'), ('completed', 'Завершен')], default='pending')
+    created_at = models.DateTimeField(auto_now_add=True) 
 
     def __str__(self):
         return f"Заказ #{self.id} для {self.user.username}"
 
 class Reservation(models.Model):
-    customer_name = models.CharField(max_length=255)
-    date = models.DateTimeField()
-    number_of_people = models.PositiveIntegerField()
-    status_choices = [
-        ('confirmed', 'Подтверждено'),
-        ('pending', 'Ожидает'),
-        ('canceled', 'Отменено')
-    ]
-    status = models.CharField(max_length=10, choices=status_choices, default='pending')
+    customer_name = models.CharField(max_length=255) 
+    date = models.DateTimeField()  # Дата и время бронирования , вместе, мне просто понравалось как выглядит выпадашка
+    number_of_people = models.PositiveIntegerField()  
+    duration = models.PositiveIntegerField() 
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)  # Кастомный пользователь
 
     def __str__(self):
-        return f"Reservation {self.id} - {self.customer_name}"
+        return f'Бронирование от {self.customer_name} на {self.date}'
+
+    class Meta:
+        verbose_name = 'Бронирование'
+        verbose_name_plural = 'Бронирования'
 
 class Employee(models.Model):
     ROLE_CHOICES = [
@@ -57,7 +56,7 @@ class Employee(models.Model):
         ('waiter', 'Официант'),
         ('manager', 'Менеджер')
     ]
-    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)  # Используем CustomUser вместо User
+    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE) 
     role = models.CharField(max_length=10, choices=ROLE_CHOICES)
     phone = models.CharField(max_length=15, blank=True)
 
@@ -83,7 +82,7 @@ class Discount(models.Model):
         return f"Discount: {self.code} ({self.discount_percentage}%)"
 
 class Notification(models.Model):
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)  # Используем CustomUser вместо User
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE) 
     message = models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
     is_read = models.BooleanField(default=False)

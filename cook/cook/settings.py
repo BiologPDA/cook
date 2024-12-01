@@ -72,7 +72,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'webappdb',
         'USER': 'postgres',
-        'PASSWORD': 'postgres',
+        'PASSWORD': '1',
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -83,18 +83,7 @@ DATABASES = {
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+
 ]
 
 
@@ -116,7 +105,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
+BASE_DIR / "main" / "static", 
 
 ]
 
@@ -131,3 +120,5 @@ LOGIN_REDIRECT_URL = '/'
 # Перенаправление после выхода
 LOGOUT_REDIRECT_URL = '/'
 
+# Настройки для сообщений
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'

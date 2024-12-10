@@ -1,0 +1,82 @@
+@keyframes scrolling-header {
+    to {
+        box-shadow: 0 5px 10px #7d7d7c;
+        background: rgba(255, 255, 255, 0.9);
+    }
+}
+
+.header {
+    animation-name: scrolling-header;
+    animation-fill-mode: both;
+    animation-timeline: scroll();
+    animation-range: 70px 500px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+}
+
+@keyframes fade-in {
+    from {
+        translate: -25vw;
+        opacity: 0;
+
+    }
+}
+
+.anim {
+    animation-name: fade-in;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+    view-timeline-name: --fade-in-image;
+    animation-timeline: --fade-in-image;
+    animation-range: 20% 45%;
+}
+
+@keyframes fade {
+    from {
+        translate: 25vw;
+        opacity: 0;
+
+    }
+}
+
+.anim1 {
+    animation-name: fade;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+    view-timeline-name: --fade-in-image;
+    animation-timeline: --fade-in-image;
+    animation-range: 20% 45%;
+}
+
+@keyframes fade-opacity {
+    from {
+        opacity: 0;
+    }
+}
+
+.anim2 {
+    animation-name: fade-opacity;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+    view-timeline-name: --fade-in-image;
+    animation-timeline: --fade-in-image;
+    animation-range: 5% 15%;
+}
+
+@keyframes fade-opacity1 {
+    from {
+        opacity: 0;
+    }
+}
+
+.anim3 {
+    animation-name: fade-opacity1;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+    view-timeline-name: --fade-in-image;
+    animation-timeline: --fade-in-image;
+    animation-range: 5% 20%;
+}

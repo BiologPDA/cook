@@ -2,6 +2,8 @@
     % load static %
 }
 
+@import url(animation.css);
+
 body::-webkit-scrollbar {
     width: 12px;
 }
@@ -199,6 +201,7 @@ li {
 
     background-repeat: no-repeat;
     background-size: cover;
+
 }
 
 
@@ -209,7 +212,6 @@ li {
     align-items: center;
     background: #fff;
     padding: 0 10%;
-    box-shadow: 0 5px 10px #7d7d7c;
 }
 
 .nav {
@@ -426,6 +428,7 @@ nav ul li:hover > ul {
 }
 
 .name {
+    padding-top: 15vh;
     color: #fff;
     font-family: "Great Vibes", cursive;
     font-weight: 400;
@@ -494,12 +497,14 @@ nav ul li:hover > ul {
 }
 
 .about_photo {
+
     height: 50vh;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
         url('../img/1.jpg');
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 .about_main {
@@ -568,6 +573,10 @@ nav ul li:hover > ul {
         top: 55%;
     }
 
+    .name {
+        padding-top: 8vh;
+    }
+
     .name_about {
         font-size: 88px;
     }
@@ -616,6 +625,7 @@ nav ul li:hover > ul {
     }
 
     .name {
+        padding-top: 4vh;
         font-size: 100px;
     }
 

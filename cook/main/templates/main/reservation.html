@@ -59,7 +59,7 @@
     <div class="reservation">
         <div class="container">
             <div class="reservation_form">
-                <form method="POST" action="{% url 'reservation' %}">
+                <form method="POST" action="{% url 'reservation' %}" class="reservation_form">
                     {% csrf_token %}
                     <div class="form_input">
                         <p class="input_text">Имя клиента</p>
@@ -99,13 +99,14 @@
             if (notification) {
                 setTimeout(() => {
                     notification.style.display = 'none';
-                }, 5000); // Уведомление исчезает через 5 секунд
+                }, 5000); 
             }
         });
+
     </script>
 
     <style>
-        /* Плавное исчезновение уведомлений */
+      
         .notification {
             position: fixed;
             top: 20px;
@@ -121,14 +122,33 @@
             max-width: 350px;
             width: 100%;
             margin: 0;
-            opacity: 1; /* Начальная видимость */
-            transition: opacity 0.5s ease-out; /* Плавное исчезновение */
+            opacity: 1;
+         
+            transition: opacity 0.5s ease-out;
+     
         }
 
         .notification.hidden {
-            opacity: 0; /* После добавления класса .hidden, уведомление станет невидимым */
+            opacity: 0;
         }
+
     </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js" integrity="sha256-huW7yWl7tNfP7lGk46XE+Sp0nCotjzYodhVKlwaNeco=" crossorigin="anonymous"></script>
+    <script>
+        SmoothScroll({
+            animationTime: 700,
+            stepSize: 100,
+            accelerationDelta: 40,
+            accelerationMax: 3,
+            keyboardSupport: true,
+            arrowScroll: 60,
+            pulseAlgorithm: true,
+            pulseScale: 5,
+            pulseNormalize: 1,
+            touchpadSupport: true,
+        })
+
+    </script>
 </body>
 
 </html>

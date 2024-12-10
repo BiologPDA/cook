@@ -7,7 +7,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('main', '0002_alter_reservation_options_and_more'),
-        ('main', '0005_customuser_email'),
+    
     ]
 
     operations = [

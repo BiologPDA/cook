@@ -110,7 +110,7 @@
                     <p class="food_name">Водка Grey Goose — 850 ₽ (50 мл)</p>
                     <p class="food_desc">Премиальная водка с гладким вкусом и чистым ароматом.</p>
                 </div>
-                <div class="button"><a href="{% url 'reservation' %}" class="button2">Забронировать столик</a></div>
+                <div class="button anim3"><a href="{% url 'reservation' %}" class="button2">Забронировать столик</a></div>
             </div>
 
 
@@ -129,7 +129,22 @@
             </div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js" integrity="sha256-huW7yWl7tNfP7lGk46XE+Sp0nCotjzYodhVKlwaNeco=" crossorigin="anonymous"></script>
+    <script>
+        SmoothScroll({
+            animationTime: 700,
+            stepSize: 100,
+            accelerationDelta: 40,
+            accelerationMax: 3,
+            keyboardSupport: true,
+            arrowScroll: 60,
+            pulseAlgorithm: true,
+            pulseScale: 5,
+            pulseNormalize: 1,
+            touchpadSupport: true,
+        })
 
+    </script>
 </body>
 
 </html>

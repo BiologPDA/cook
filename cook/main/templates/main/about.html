@@ -67,7 +67,7 @@
             <div class="container">
 
                 <div class="about_text_main">
-                    <div class="about_text1">
+                    <div class="about_text1 anim">
                         <div class="about_name">Время открытия</div>
                         <div class="about_shedule">Понедельник - 8:00-21:00</div>
                         <div class="about_shedule">Вторник - 8:00-21:00</div>
@@ -78,11 +78,11 @@
                         <div class="about_shedule">Воскресенье - 9:00-19:00</div>
 
                     </div>
-                    <div class="about_text2 about_main_text">
+                    <div class="about_text2 about_main_text anim1">
                         В нашем ресторане всегда царит атмосфера уюта и гостеприимства. Мы создали место, где можно не только вкусно поесть, но и приятно провести время в компании друзей и близких. Каждый визит — это маленькое гастрономическое путешествие!
                     </div>
 
-                    <div class="button"><a href="{% url 'reservation' %}" class="button2">Заказать столик</a></div>
+                    <div class="button anim3"><a href="{% url 'reservation' %}" class="button2">Заказать столик</a></div>
                 </div>
 
 
@@ -107,7 +107,22 @@
             </div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js" integrity="sha256-huW7yWl7tNfP7lGk46XE+Sp0nCotjzYodhVKlwaNeco=" crossorigin="anonymous"></script>
+    <script>
+        SmoothScroll({
+            animationTime: 700,
+            stepSize: 100,
+            accelerationDelta: 40,
+            accelerationMax: 3,
+            keyboardSupport: true,
+            arrowScroll: 60,
+            pulseAlgorithm: true,
+            pulseScale: 5,
+            pulseNormalize: 1,
+            touchpadSupport: true,
+        })
 
+    </script>
 </body>
 
 </html>

@@ -91,15 +91,15 @@
 
         <div class="contacts_desc">
 
-            <div class="desc1">
+            <div class="desc1 anim3">
                 <p class="desc_name">Атмосфера и сервис</p>
                 <p class="desc_main">Уютный интерьер, приятная музыка и внимательное обслуживание создают идеальные условия для отдыха, деловых встреч и семейных вечеров.</p>
             </div>
-            <div class="desc2">
+            <div class="desc2 anim3">
                 <p class="desc_name">Вкусные традиции</p>
                 <p class="desc_main">Мы создаем блюда, которые радуют своим вкусом и качеством. Наша кухня — это симбиоз традиционных рецептов и современных кулинарных идей.</p>
             </div>
-            <div class="desc3">
+            <div class="desc3 anim3">
                 <p class="desc_name">Особые предложения</p>
                 <p class="desc_main">Каждую неделю мы готовим для вас специальные блюда от шеф-повара. Не забудьте попробовать наши сезонные новинки!</p>
             </div>
@@ -117,7 +117,22 @@
             </div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js" integrity="sha256-huW7yWl7tNfP7lGk46XE+Sp0nCotjzYodhVKlwaNeco=" crossorigin="anonymous"></script>
+    <script>
+        SmoothScroll({
+            animationTime: 700,
+            stepSize: 100,
+            accelerationDelta: 40,
+            accelerationMax: 3,
+            keyboardSupport: true,
+            arrowScroll: 60,
+            pulseAlgorithm: true,
+            pulseScale: 5,
+            pulseNormalize: 1,
+            touchpadSupport: true,
+        })
 
+    </script>
 </body>
 
 </html>

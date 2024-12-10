@@ -2,6 +2,8 @@
     % load static %
 }
 
+@import url(animation.css);
+
 body::-webkit-scrollbar {
     width: 12px;
 }
@@ -70,10 +72,11 @@ a {
 
 
     width: 100%;
-    height: 120vh;
+    height: 110vh;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url('../img/bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 
@@ -211,10 +214,9 @@ a {
 
     display: flex;
     justify-content: space-between;
-    align-items: center;
     background: #fff;
+    align-items: center;
     padding: 0 10%;
-    box-shadow: 0 5px 10px #7d7d7c;
 }
 
 .nav {
@@ -432,9 +434,6 @@ nav ul li:hover > ul {
 .main {
     width: 700px;
     margin: 0 auto;
-    margin-top: 26vh;
-    margin-bottom: 23vh;
-
 }
 
 .main_text1 {
@@ -448,6 +447,7 @@ nav ul li:hover > ul {
     width: 700px;
     padding: 5%;
     font-size: 23px;
+    padding-top: 26vh;
 }
 
 
@@ -615,6 +615,7 @@ nav ul li:hover > ul {
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
         url('../img/4.jpg');
     background-position: 50% 50%;
+    background-attachment: fixed;
 }
 
 .about_main {

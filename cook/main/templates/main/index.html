@@ -42,18 +42,18 @@
 <body>
     <div class="intro">
         {% include 'main/header.html' %}
-        
+
         <!-- Блок для отображения сообщений -->
         {% if messages %}
-            <div class="container mt-3">
-                <div class="alert alert-success">
-                    {% for message in messages %}
-                        <p>{{ message }}</p>
-                    {% endfor %}
-                </div>
+        <div class="container mt-3">
+            <div class="alert alert-success">
+                {% for message in messages %}
+                <p>{{ message }}</p>
+                {% endfor %}
             </div>
+        </div>
         {% endif %}
-        
+
         <div class="main">
             <div class="container">
                 <div class="main_text1">
@@ -68,21 +68,21 @@
 
     <div class="benefits">
         <div class="container container1">
-            <div class="benefits_1">
+            <div class="benefits_1 anim">
                 <div class="benefits1_photo"></div>
                 <div class="benefits1_text">
                     <p class="benefits_text_name">Гармония вкуса и аромата</p>
                     <p class="benefits_text_main">Мы готовим для вас блюда, которые сочетают свежие ингредиенты и изысканные ароматы. Каждое блюдо — результат мастерства и любви к кулинарии.</p>
                 </div>
             </div>
-            <div class="benefits_2">
+            <div class="benefits_2 anim1">
                 <div class="benefits2_photo"></div>
                 <div class="benefits2_text">
                     <p class="benefits_text_name">Вдохновленные традициями, созданные для вас</p>
                     <p class="benefits_text_main">Наши повара черпают вдохновение в традиционных рецептах, привнося в них современные нотки и создавая блюда, которые вам точно захочется попробовать снова.</p>
                 </div>
             </div>
-            <div class="benefits_3">
+            <div class="benefits_3 anim">
                 <div class="benefits3_photo"></div>
                 <div class="benefits3_text">
                     <p class="benefits_text_name">Незабываемые впечатления с каждым приемом пищи</p>
@@ -94,12 +94,12 @@
 
     <div class="about">
         <div class="about_photo">
-            <div class="name_about name">
+            <div class="name_about name anim2">
                 Изысканная еда в уютной атмосфере
             </div>
         </div>
 
-        <div class="about_main">
+        <div class="about_main anim2">
             <div class="about_main_photo1"></div>
             <div class="about_main_photo2"></div>
             <div class="about_main_text">
@@ -116,6 +116,23 @@
             </div>
         </div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js" integrity="sha256-huW7yWl7tNfP7lGk46XE+Sp0nCotjzYodhVKlwaNeco=" crossorigin="anonymous"></script>
+    <script>
+        SmoothScroll({
+            animationTime: 700,
+            stepSize: 100,
+            accelerationDelta: 40,
+            accelerationMax: 3,
+            keyboardSupport: true,
+            arrowScroll: 60,
+            pulseAlgorithm: true,
+            pulseScale: 5,
+            pulseNormalize: 1,
+            touchpadSupport: true,
+        })
+
+    </script>
 </body>
 
 </html>

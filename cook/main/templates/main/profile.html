@@ -56,6 +56,9 @@
                 <p><strong>Имя пользователя:</strong> {{ user.username }}</p>
                 <p><strong>Email:</strong> {{ user.email }}</p>
                 <p><strong>Дата регистрации:</strong> {{ user.date_joined|date:"d M Y" }}</p>
+
+                <button type="submit" class="button button2 button3">Создать заказ</button>
+                <button type="submit" class="button button2">Редактировать профиль</button>
             </div>
 
             {% if user.is_superuser %}
@@ -130,6 +133,7 @@
             </div>
             {% endif %}
 
+
             <div class="button"><a href="{% url 'logout' %}" class="button2">Выйти</a></div>
 
         </div>
@@ -143,7 +147,7 @@
             </div>
         </div>
     </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js" integrity="sha256-huW7yWl7tNfP7lGk46XE+Sp0nCotjzYodhVKlwaNeco=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js" integrity="sha256-huW7yWl7tNfP7lGk46XE+Sp0nCotjzYodhVKlwaNeco=" crossorigin="anonymous"></script>
     <script>
         SmoothScroll({
             animationTime: 700,
